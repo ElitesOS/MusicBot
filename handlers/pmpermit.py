@@ -20,7 +20,7 @@ async def pmPermit(client: USER, message: Message):
     keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton(text="⚜ Master ⚜", url=f"https://t.me/{master_user}")   
+                InlineKeyboardButton(text="Deployed By", url=f"https://t.me/{master_user}")   
             ]
         ]
     )
@@ -32,7 +32,7 @@ async def pmPermit(client: USER, message: Message):
             await message.reply_photo(
                 photo="https://telegra.ph/file/86336252ab3c5125c2a6b.jpg",
                 reply_markup=keyboard,
-                caption="This Is Music Bot Assistant If U Want To Talk With My Master Click Below",
+                caption="This Is Music Bot Assistant If You Want To Talk With My Master Click Below",
             )
             return
 
@@ -46,11 +46,11 @@ async def bye(client: Client, message: Message):
         queryy = text[1]
         if queryy == "on":
             PMSET = True
-            await message.reply_text("PM Permit Enabled")
+            await message.reply_text("**PM Permit Enabled**")
             return
         if queryy == "off":
             PMSET = None
-            await message.reply_text("PM Permit Disabled")
+            await message.reply_text("**PM Permit Disabled**")
             return
 
 @USER.on_message(filters.text & filters.private & filters.me)        
@@ -58,7 +58,7 @@ async def autopmPermiat(client: USER, message: Message):
     chat_id = message.chat.id
     if not chat_id in pchats:
         pchats.append(chat_id)
-        await message.reply_text("Auto Approved ...")
+        await message.reply_text("**Auto Approved The User**")
         return
     message.continue_propagation()    
     
@@ -67,7 +67,7 @@ async def pmPermiat(client: USER, message: Message):
     chat_id = message.chat.id
     if not chat_id in pchats:
         pchats.append(chat_id)
-        await message.reply_text("Approoved to PM")
+        await message.reply_text("**Approoved to PM**")
         return
     message.continue_propagation()    
     
@@ -77,6 +77,6 @@ async def rmpmPermiat(client: USER, message: Message):
     chat_id = message.chat.id
     if chat_id in pchats:
         pchats.remove(chat_id)
-        await message.reply_text("Dispprooved to PM")
+        await message.reply_text("**Dispprooved to PM**")
         return
     message.continue_propagation()
