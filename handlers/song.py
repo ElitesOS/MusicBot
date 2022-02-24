@@ -41,17 +41,17 @@ def song(client, message):
 
     except Exception as e:
         m.edit(
-            "𝐒𝐨𝐧𝐠 🥀 𝐍𝐨𝐭 😔 𝐅𝐨𝐮𝐧𝐝."
+            "`Nothing Found With That Title`"
         )
         print(str(e))
         return
-    m.edit("𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 ✨ 𝐒𝐨𝐧𝐠")
+    m.edit("**Download Song**")
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = "**🔰 Owner :- ✨ [Dhruba](https://t.me/DhrubaXD) ❤️**\n**Repo ~** [Repo](https://github.com/LEGENDARY-OS/MUSIC-BOT)"
+        rep = "**Owner** - ♡ [Simple Boy](https://t.me/ItsSimpleBoy) ♡**\n**Repo ~** [Click Here](https://github.com/ElitesOS/MusicBot)"
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
@@ -59,7 +59,7 @@ def song(client, message):
         message.reply_audio(audio_file, caption=rep, thumb=thumb_name, parse_mode='md', title=title, duration=dur)
         m.delete()
     except Exception as e:
-        m.edit("**𝐘𝐨𝐮𝐭𝐮𝐛𝐞  𝐄𝐫𝐫𝐨𝐫 ❌ 𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐎𝐰𝐧𝐞𝐫 🥀 [❛-𝐌𝐫'Dhruba 🚬](https://t.me/DhrubaXD) ❤️**")
+        m.edit("**Youtube Error,Contact [Support](https://t.me/TeamB2kSupport)**")
         print(e)
 
     try:
