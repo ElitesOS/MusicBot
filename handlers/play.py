@@ -102,7 +102,7 @@ async def play(_, message: Message):
     global que
     global useer
 
-    lel = await message.reply("🔎 **𝐅𝐢𝐧𝐝𝐢𝐧𝐠 💫 𝐓𝐡𝐞 𝐒𝐨𝐧𝐠 ❤️ ❰ Lovely 🚬 ❱...**")
+    lel = await message.reply("**Loading Youtube To Accept Search**")
 
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
@@ -122,24 +122,24 @@ async def play(_, message: Message):
                     invitelink = await _.export_chat_invite_link(chid)
                 except:
                     await lel.edit(
-                        "<b>𝐀𝐝 𝐌𝐞 😎 𝐀𝐬 𝐀𝐝𝐦𝐢𝐧 𝐎𝐟 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩 💫</b>")
+                        "<b>Make Me Your Group's All Rights Admin To Play Music In It</b>")
                     return
 
                 try:
                     await USER.join_chat(invitelink)
                     await USER.send_message(
-                        message.chat.id, "** 𝐌𝐮𝐬𝐢𝐜 🎶 𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭 𝐉𝐨𝐢𝐧𝐞𝐝 😎 🤟 𝐓𝐡𝐢𝐬 𝐆𝐫𝐨𝐮𝐩  𝐅𝐨𝐫 𝐏𝐥𝐚𝐲 ▶ 𝐌𝐮𝐬𝐢𝐜 🎸**")
+                        message.chat.id, "**Music Assistant Has Joined The Chat**")
 
                 except UserAlreadyParticipant:
                     pass
                 except Exception:
                     await lel.edit(
-                        f"<b>❰𝐅𝐥𝐨𝐨𝐝 😒 𝐖𝐚𝐢𝐭 𝐄𝐫𝐫𝐨𝐫  😔❱</b>\n𝐇𝐞𝐲 𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭 🎸 𝐔𝐬𝐞𝐫𝐁𝐨𝐭 ❤️ 𝐂𝐨𝐮𝐥𝐝𝐧'𝐭 𝐉𝐨𝐢𝐧 𝐘𝐨𝐮𝐫 💫 𝐆𝐫𝐨𝐮𝐩  𝐃𝐮𝐞 𝐓𝐨 𝐇𝐞𝐚𝐯𝐲 𝐉𝐨𝐢𝐧 𝐑𝐞𝐐𝐮𝐞𝐬𝐭 🥀 . 𝐌𝐚𝐤𝐞 𝐒𝐮𝐫𝐞 𝐁𝐨𝐭 💫 𝐈𝐬 𝐍𝐨𝐭 𝐁𝐚𝐧𝐧𝐞𝐝 😔 𝐈𝐧 𝐆𝐫𝐨𝐮𝐩 🎸  𝐀𝐧𝐝 𝐓𝐫𝐲 𝐀𝐠𝐚𝐢𝐧 𝐋𝐚𝐭𝐞𝐫 𝐀𝐧𝐲 𝐇𝐞𝐥𝐩 𝐃𝐦 :- ✨ [❛-𝐌𝐫'Dhruba 🚬](https://t.me/DhrubaXD) ❤️🥀 :) ")
+                        f"<b>**Flood Error Came**</b>\n**My Assistant Is Unable To Join Your Group,Please Make Sure That The Bot Is Not Banned And Try Again Later,Contact If Error - [B2k Support](https://t.me/TeamB2kSupport)")
     try:
         await USER.get_chat(chid)
     except:
         await lel.edit(
-            f"<i>Hey {user.first_name}, 𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭 🎸 𝐔𝐬𝐞𝐫𝐁𝐨𝐭 𝐈𝐬 𝐍𝐨𝐭 𝐈𝐧 𝐓𝐡𝐢𝐬 𝐂𝐡𝐚𝐭' 𝐀𝐬𝐤 𝐀𝐝𝐦𝐢𝐧 😎 𝐓𝐨 𝐒𝐞𝐧𝐝 /𝐏𝐥𝐚𝐲 𝐂𝐨𝐦𝐦𝐚𝐧𝐝 😎 𝐅𝐨𝐫 𝐅𝐢𝐫𝐬𝐭 𝐓𝐢𝐦𝐞 𝐓𝐨 𝐀𝐝𝐝 𝐈𝐭 𝐀𝐧𝐲 𝐇𝐞𝐥𝐩 𝐃𝐦 :- ✨ [❛-𝐌𝐫'Dhruba 🚬](https://t.me/DhrubaXD) ❤️🥀 </i>")
+            f"<i>Hey {user.first_name},**My Assistant Is Not In This Group\nAdmins Do /play To Add Him Or Add @B2kMusicAssistant Manually\nSupport - [B2k Support](https://t.me/TeamB2kSupport)</i>")
         return
     
     audio = (
@@ -152,7 +152,7 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"**❰ ° 𝐒𝐨𝐧𝐠 🎸 ° ❱ 𝐋𝐨𝐧𝐠𝐞𝐫 𝐓𝐡𝐚𝐧 {DURATION_LIMIT} 𝐌𝐢𝐧𝐮𝐭𝐞'𝐒 𝐀𝐫𝐞𝐧'𝐭 𝐀𝐥𝐥𝐨𝐰𝐞𝐝 𝐓𝐨 𝐏𝐥𝐚𝐲 ▶ ❤️🥀**"
+                f"**This Song Is Longer Than {DURATION_LIMIT} Please Choose Another Song**"
             )
 
         file_name = get_file_name(audio)
@@ -166,22 +166,22 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                            text="💝 Owner 💝",
-                            url=f"https://t.me/DhrubaXD"),
+                            text="Created By",
+                            url=f"https://t.me/TeamB2k"),
                             
                     InlineKeyboardButton(
-                            text="👨‍💻 Assistant",
+                            text="Assistant",
                             url=f"https://t.me/{bot_username}")
                ],
                 [
                     InlineKeyboardButton(
                             text="Support",
-                            url=f"https://t.me/Official_K_LegendBot")
+                            url=f"https://t.me/TeamB2k")
                ],
                [
                         InlineKeyboardButton(
-                            text="🔰 Help 🔰",
-                            url=f"https://t.me/Legend_K_Userbot")
+                            text="Help [24×7]",
+                            url=f"https://t.me/B2kSupportBot")
                    
                 ]
             ]
@@ -219,22 +219,22 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                            text="💝 Owner 💝",
-                            url=f"https://t.me/DhrubaXD"),
+                            text="Created By",
+                            url=f"https://t.me/TeamB2k"),
                             
                     InlineKeyboardButton(
-                            text="👨‍💻 Assistant",
+                            text="Assistant",
                             url=f"https://t.me/{bot_username}")
                ],
                 [
                     InlineKeyboardButton(
                             text="Support",
-                            url=f"https://t.me/Official_K_LegendBot")
+                            url=f"https://t.me/TeamB2k")
                ],
                [
                         InlineKeyboardButton(
-                            text="🔰 Help 🔰",
-                            url=f"https://t.me/Legend_K_Userbot")
+                            text="Help [24×7]",
+                            url=f"https://t.me/B2kSupportBot")
                    
                 ]
             ]
@@ -249,22 +249,22 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                            text="💝 Owner 💝",
-                            url=f"https://t.me/DhrubaXD"),
+                            text="Created By",
+                            url=f"https://t.me/TeamB2k"),
                             
                     InlineKeyboardButton(
-                            text="👨‍💻 Assistant",
+                            text="Assistant",
                             url=f"https://t.me/{bot_username}")
                ],
                 [
                     InlineKeyboardButton(
                             text="Support",
-                            url=f"https://t.me/Official_K_LegendBot")
+                            url=f"https://t.me/TeamB2k")
                ],
                [
                         InlineKeyboardButton(
-                            text="🔰 Help 🔰",
-                            url=f"https://t.me/Legend_K_Userbot")
+                            text="Help [24×7]",
+                            url=f"https://t.me/B2kSupportBot")
                    
                 ]
             ]
@@ -308,7 +308,7 @@ async def play(_, message: Message):
 
         except Exception as e:
             await lel.edit(
-                "**🌸° 𝐒𝐨𝐧𝐠 🎸 𝐍𝐨𝐭 😒 𝐅𝐨𝐮𝐧𝐝 𝐒𝐩𝐞𝐥𝐥𝐢𝐧𝐠 𝐏𝐫𝐨𝐛𝐥𝐞𝐦 ° 🥀.**"
+                "**Song Not Found,Please ReCheck The Title**"
             )
             print(str(e))
             return
@@ -317,22 +317,22 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                            text="💝 Owner 💝",
-                            url=f"https://t.me/DhrubaXD"),
+                            text="Created By",
+                            url=f"https://t.me/TeamB2k"),
                             
                     InlineKeyboardButton(
-                            text="👨‍💻 Assistant",
+                            text="Assistant",
                             url=f"https://t.me/{bot_username}")
                ],
                 [
                     InlineKeyboardButton(
                             text="Support",
-                            url=f"https://t.me/Official_K_LegendBot")
+                            url=f"https://t.me/TeamB2k")
                ],
                [
                         InlineKeyboardButton(
-                            text="🔰 Help 🔰",
-                            url=f"https://t.me/Legend_K_Userbot")
+                            text="Help [24×7]",
+                            url=f"https://t.me/B2kSupportBot")
                    
                 ]
             ]
@@ -354,7 +354,7 @@ async def play(_, message: Message):
         position = await queues.put(chat_id, file=file_path)
         await message.reply_photo(
             photo="final.png",
-            caption="****❰ 𝐌𝐮𝐬𝐢𝐜'𝐗 ❘ 😈 ❱ 𝐒𝐨𝐧𝐠 ❤️ 𝐏𝐨𝐬𝐢𝐭𝐢𝐨𝐧 💫🤟** {}**".format(position),
+            caption="****Music Bot Song Position** {}**".format(position),
             reply_markup=keyboard,
         )
     else:
@@ -371,7 +371,7 @@ async def play(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
-            caption="**▶️ Legendary Music Bot Is Playin Now In** ➡️ `{}`\n**Title:** {}\n**Duration:** {}\nViews: {}".format(
+            caption="**B2k Music Bot Is Playin Now In** -> `{}`\n**Title:** {}\n**Duration:** {}\nViews: {}".format(
         message.chat.title, results[i]['title'], results[i]['duration'], results[i]['views']
         ), )
 
