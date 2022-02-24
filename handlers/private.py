@@ -11,24 +11,24 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 async def start_(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/c70635cc28eec97a43f40.jpg",
-        caption=f"""**𝐓𝐡𝐢𝐬 𝐈𝐬 𝐀𝐝𝐯𝐚𝐧𝐜𝐞 🥀𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦 𝐌𝐮𝐬𝐢𝐜 𝐁𝐨𝐭 𝐑𝐮𝐧 𝐎𝐧 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 🥀 𝐕𝐩𝐬 💫𝐒𝐞𝐫𝐯𝐞𝐫 🌎 𝐅𝐞𝐞𝐥 ❤️ 𝐇𝐢𝐠𝐡 𝐐𝐮𝐚𝐥𝐢𝐭𝐲 𝐌𝐮𝐬𝐢𝐜 🎧 𝐈𝐧 𝐕𝐜**""",
+        caption=f"""**I Am A Smooth Telegram Music Bot With Fantastic Features & High Quality Songs**""",
     reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "♥️ Creator ♥️", url=f"https://t.me/DhrubaXD")
+                        "Created By", url=f"https://t.me/TeamB2k")
                ],
                 [
                     InlineKeyboardButton(
-                        "Repo ✨", url=f"https://github.com/LEGENDARY-OS/MUSIC-BOT")
+                        "Repository", url=f"https://github.com/ElitesOS/MusicBot")
                ], 
                 [
                     InlineKeyboardButton(
-                        "👨‍💻 Support", url=f"https://t.me/Official_K_LegendBot")
+                        "Support Chat", url=f"https://t.me/TeamB2kSupport")
                ],
                 [
                     InlineKeyboardButton(
-                        "💝 Help 💝", url=f"https://t.me/Legend_K_Userbot")
+                        "Help [24×7]", url=f"https://t.me/TeamB2kSupport")
                 ]
                 
            ]
@@ -44,7 +44,7 @@ async def help(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "💥 Repo 💞", url=f"https://github.com/LEGENDARY-OS/MUSIC-BOT")
+                        "Repository", url=f"https://github.com/ElitesOS/MusicBot")
                 ]
             ]
         ),
