@@ -22,7 +22,7 @@ async def join_chat(c: Client, m: Message):
             (await user.get_me()).id,
             can_manage_voice_chats=True
         )
-        return await user.send_message(chat_id, "✅ Bot Has Been Entered In chat")
+        return await user.send_message(chat_id, "**Bot Is In The Group\nSupport [Here](https://t.me/TeamB2k)")
     except UserAlreadyParticipant:
         admin = await m.chat.get_member((await user.get_me()).id)
         if not admin.can_manage_voice_chats:
@@ -30,5 +30,5 @@ async def join_chat(c: Client, m: Message):
                 (await user.get_me()).id,
                 can_manage_voice_chats=True
             )
-            return await user.send_message(chat_id, "✅ Bot already Joined The Chat")
-        return await user.send_message(chat_id, "✅ Bot already Joined The Chat")
+            return await user.send_message(chat_id, "**Bot Is In Already In The Group**")
+        return await user.send_message(chat_id, "**Bot Already Joined The Group**")
